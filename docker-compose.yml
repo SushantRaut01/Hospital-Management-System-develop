@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  # Django Backend Service
+  backend:
+    build: ./backend               # Build from backend Dockerfile
+    ports:
+      - "8000:8000"                # Host port:Container port for Django
+    env_file:
+      - ./backend/.env             # Load environment variables
+    restart: always                # Auto-restart if the container stops
+    networks:
+      - hospital_network           # Connect to custom Docker network
+
+  # React Frontend Service
+  frontend:
+    build:
+      context: .                   # Build context is the root folder
+      dockerfile: frontend/Dockerfile  # Use specific Dockerfile for frontend
+    ports:
+      - "80:80"                    # Host port:Container port for Nginx
+    depends_on:
+      - backend                    # Start backend first
+    restart: always
+    networks:
+      - hospital_network
+
+# Custom Docker Network to let frontend and backend communicate
+networks:
+  hospital_network:
+    driver: bridge

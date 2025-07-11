@@ -1,0 +1,21 @@
+# Production WSGI server for Django
+gunicorn
+
+# Django framework
+Django
+
+# Django REST API framework
+djangorestframework
+
+# For reading environment variables from .env files
+python-decouple
+
+# Enable CORS headers in Django (for frontend-backend communication)
+django-cors-headers
+
+# MySQL database connector for Django ORM
+mysqlclient
+
+# PDF generation library (used for generating reports/prescriptions)
+reportlab
+
