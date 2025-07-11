@@ -11,7 +11,7 @@ RUN npm install
 
 # Copy all frontend project files and build production files
 COPY frontend/ ./
-RUN npm run build
+RUN NODE_OPTIONS=--max_old_space_size=4096 npm run build
 
 
 # ---------- Production Stage ----------
