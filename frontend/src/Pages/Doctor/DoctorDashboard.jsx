@@ -4,7 +4,7 @@ import Navbar from "./components/Navbar";
 import PatientList from "./components/PatientList";
 import PatientDetails from "./components/PatientDetails";
 import MedicineSuggestions from "./components/MedicineSuggestions";
-import API_BASE_URL from "../../apiConfig";
+import API_BASE_URL from "../../../apiConfig";
 
 const DoctorDashboard = () => {
   const [patients, setPatients] = useState([]);
