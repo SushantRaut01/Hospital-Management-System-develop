@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import API_BASE_URL from "../../apiConfig";
+import apiConfig from '../../../apiConfig';
 
 const PatientDetails = ({ patient }) => {
   const [medName, setMedName] = useState("");
